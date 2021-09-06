@@ -1,0 +1,33 @@
+<div class="row">
+  <%= form_for @changeset, Routes.dividend_path(@conn, :create, @asset), fn f -> %>
+    <div class="row">
+      <div class="input-field col 1">
+        <%= text_input f, :description, class: "validate" %>
+        <label for="description">Description</label>
+      </div>
+      <div class="input-field col 6">
+        <%= date_input f, :date %>
+        <label for="date">Date</label>
+      </div>
+    </div>
+    <div class="row">
+      <div class="input-field col 3">
+        <%= number_input f, :value, step: "any", class: "validate"  %>
+        <label>Value</label>
+      </div>
+      <div class="input-field col 3">
+        <%= select f, :type, ["BONUS": "BONUS","MONEY": "MONEY"], prompt: "Choose your option" %>
+        <label>Type</label>
+      </div>
+    </div>
+    <%= submit "Submit Dividend", class: "btn btn-primary" %>
+  <% end %>
+</div>
+
+<script >
+  document.addEventListener('DOMContentLoaded', function() {
+    var elems = document.querySelectorAll('select');
+    var options = {};
+    var instances = M.FormSelect.init(elems, options);
+  });
+</script>

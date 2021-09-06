@@ -1,0 +1,54 @@
+<div class="row">
+  <%= form_for @changeset, Routes.transaction_path(@conn, :create), fn f -> %>
+  <%# <form class="col 12"> %>
+    <div class="row">
+      <div class="input-field col 1">
+        <%= text_input f, :code_stock, placeholder: "Placeholder", class: "validate" %>
+        <label for="code_stock">Code Stock</label>
+      </div>
+      <div class="input-field col 3">
+        <%= number_input f, :amount, class: "validate" %>
+        <label for="amount">Amount</label>
+      </div>
+
+    </div>
+    <div class="row">
+      <div class="input-field col 1">
+
+        <%= number_input f, :price, step: "any", class: "validate" %>
+        <label for="price">Price</label>
+      </div>
+      <div class="input-field col 6">
+        <%= date_input f, :date %>
+        <label for="date">Date</label>
+      </div>
+    </div>
+    <div class="row">
+      <div class="input-field col 3">
+        <%= select f, :type, ["FII": "FII","ACAO": "ACAO","BONIFICACAO": "BONIFICACAO"], prompt: "Choose your option" %>
+        <label>Type</label>
+      </div>
+      <div class="input-field col 3">
+        <%= select f, :operation, ["BUY": "BUY","SELL": "SELL"], prompt: "Buy or Sell?" %>
+        <label>Type</label>
+      </div>
+    </div>
+    <%= submit "Save Transaction", class: "btn btn-primary" %>
+  <% end %>
+</div>
+
+<script >
+  document.addEventListener('DOMContentLoaded', function() {
+    var elems = document.querySelectorAll('.datepicker');
+    var options = {
+      setDefaultDate: false
+    };
+    var instances = M.Datepicker.init(elems, options);
+  });
+  document.addEventListener('DOMContentLoaded', function() {
+    var elems = document.querySelectorAll('select');
+    var options = {};
+    var instances = M.FormSelect.init(elems, options);
+  });
+</script>
+<%# </div> %>

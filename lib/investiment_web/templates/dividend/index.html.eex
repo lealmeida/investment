@@ -1,0 +1,11 @@
+<h4>My Dividends</h4>
+<ul class="collection">
+  <%= for dividend <- @dividends do %>
+    <li class="collection-item">
+      <%= dividend.date %>
+      <%= dividend.type %>
+      <%= dividend.description %>
+      <%= dividend.value %>
+    </li>
+  <% end %>
+</ul>

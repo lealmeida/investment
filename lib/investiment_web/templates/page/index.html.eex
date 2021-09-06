@@ -24,6 +24,7 @@
         <td><%= asset.total_amount %></td>
         <td><%= asset.investiment_value %></td>
         <td><%= link "Dividends", to: Routes.dividend_path(@conn, :new, asset) %></td>
+        <td><%= link "My Dividends", to: Routes.dividend_path(@conn, :index) %></td>
 
         <%# <td>asset.total_amount</td>
         <td>asset.average_price</td>

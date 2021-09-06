@@ -23,6 +23,7 @@ defmodule InvestimentWeb.Router do
 
     get "/asset/:id/dividend/new", DividendController, :new
     post "/asset/:id/dividend", DividendController, :create
+    get "/my-dividends", DividendController, :index
 
   end
 

@@ -5,7 +5,7 @@ defmodule Investiment.Repo.Migrations.CreateAssets do
     create table(:assets) do
       add :code, :string
       add :investiment_value, :float
-      add :total_amount, :integer
+      add :amount, :integer
       add :dividend, :decimal
       add :type, :string
       add :user_id, references(:users, on_delete: :nothing)

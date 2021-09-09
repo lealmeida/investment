@@ -4,9 +4,9 @@
 <table class="centered">
   <thead>
     <tr>
-      <th>code</th>
+      <th>Code</th>
       <th>Shares</th>
-      <th>Value</th>
+      <th>Invested Value</th>
       <%# <th>avg price</th>
 
       <th>dividends</th>

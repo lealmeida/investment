@@ -6,7 +6,7 @@ defmodule Investiment.Dividend do
     field :date, :date
     field :description, :string
     field :type, :string
-    field :value, :float
+    field :value, :decimal
     belongs_to :asset, Investiment.Asset
     belongs_to :user, Investiment.User
 

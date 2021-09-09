@@ -35,6 +35,11 @@ defmodule InvestimentWeb.TransactionController do
             |> Repo.insert
         end
       asset ->
+        IO.puts("'''''''''''''''''''''''''''''''''''")
+        IO.inspect(asset.total_amount)
+        IO.puts("'''''''''''''''''''''''''''''''''''")
+        IO.inspect(String.to_integer(amount))
+        IO.puts("'''''''''''''''''''''''''''''''''''")
         updte = Ecto.Changeset.change asset, %{total_amount: asset.total_amount + String.to_integer(amount),
         investiment_value: investiment_value + asset.investiment_value}
         Repo.update(updte)

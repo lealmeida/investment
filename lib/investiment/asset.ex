@@ -4,8 +4,8 @@ defmodule Investiment.Asset do
 
   schema "assets" do
     field :code, :string
-    field :investiment_value, :float
-    field :total_amount, :integer
+    field :investiment_value, :decimal
+    field :amount, :integer
     field :dividend, :decimal
     field :type, :string
     belongs_to :user, Investiment.User
@@ -18,7 +18,7 @@ defmodule Investiment.Asset do
   @doc false
   def changeset(asset, attrs) do
     asset
-    |> cast(attrs, [:code, :investiment_value, :total_amount, :dividend, :type])
-    |> validate_required([:code, :investiment_value, :total_amount, :type])
+    |> cast(attrs, [:code, :investiment_value, :amount, :dividend, :type])
+    |> validate_required([:code, :investiment_value, :amount, :type])
   end
 end

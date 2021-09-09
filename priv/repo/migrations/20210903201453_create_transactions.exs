@@ -5,8 +5,8 @@ defmodule Investiment.Repo.Migrations.CreateTransactions do
     create table(:transactions) do
       add :amount, :integer
       add :date, :date
-      add :price, :float
-      add :taxes, :float
+      add :price, :decimal
+      add :taxes, :decimal
       add :total_value, :decimal
       add :type, :string
       add :operation, :string

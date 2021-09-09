@@ -6,7 +6,7 @@ defmodule Investiment.Repo.Migrations.CreateDividends do
       add :date, :date
       add :type, :string
       add :description, :string
-      add :value, :float
+      add :value, :decimal
       add :user_id, references(:users, on_delete: :nothing)
       add :asset_id, references(:assets, on_delete: :nothing)
 

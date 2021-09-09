@@ -6,8 +6,8 @@ defmodule Investiment.Transaction do
     field :amount, :integer
     field :date, :date
     field :operation, :string
-    field :price, :float
-    field :taxes, :float
+    field :price, :decimal
+    field :taxes, :decimal
     field :total_value, :decimal
     field :type, :string
     belongs_to :user, Investiment.User
